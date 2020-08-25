@@ -10,11 +10,11 @@
         <insert tableName="appointment_schedule">
             <column name="id" valueNumeric="1"/>
             <column name="date" value="2004-10-19 10:23:54"/>
-            <column name="appointment" value="USA"/>
+            <column name="appointment" value="abc"/>
             <column name="start_time" value="1200"/>
             <column name="end_time" value="1300"/>
-            <column name="evaluator_id" value="USA"/>
-            <column name="user_id" value="USA"/>
+            <column name="evaluator_id" value="e01"/>
+            <column name="user_id" value="u01"/>
         </insert>
     </changeSet>
 </databaseChangeLog>
