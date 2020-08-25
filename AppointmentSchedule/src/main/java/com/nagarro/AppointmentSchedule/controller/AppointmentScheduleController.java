@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.nagarro.AppointmentSchedule.delegate.AppointmentScheduleDelegate;
 import com.nagarro.AppointmentSchedule.entity.AppointmentScheduleEntity;
-import com.nagarro.AppointmentSchedule.repository.AppointmentScheduleRepository;
 import com.nagarro.AppointmentSchedule.utils.RecordNotFoundException;
 
 
@@ -20,13 +20,13 @@ import com.nagarro.AppointmentSchedule.utils.RecordNotFoundException;
 public class AppointmentScheduleController {
 	
 	@Autowired
-	private AppointmentScheduleRepository repo;
+	private AppointmentScheduleDelegate delegate;
 	
 	@GetMapping("/get")
 	public List<AppointmentScheduleEntity>
 		getCourse()
 				throws RecordNotFoundException {	
-			return repo.findAll();
+			return delegate.findAllAppointment();
 	}
 	
 	
@@ -34,7 +34,7 @@ public class AppointmentScheduleController {
 	public ResponseEntity<String>
 		deleteCourseById(@PathVariable(value = "id") Long id)
 				throws RecordNotFoundException {
-			repo.deleteById(id);
+			delegate.deleteAppointmentById(id);
 			return ResponseEntity.noContent().build();
 	}
 	
