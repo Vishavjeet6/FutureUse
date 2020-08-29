@@ -1,12 +1,12 @@
 package com.nagarro.Course.delegate;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import com.nagarro.Course.service.CourseService;
 import com.nagarro.Course.utils.RecordNotFoundException;
 
-@Service
+@Component
 public class CourseDelegate {
 	
 	@Autowired
